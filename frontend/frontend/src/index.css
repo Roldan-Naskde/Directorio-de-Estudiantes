@@ -1,0 +1,204 @@
+/* index.css */
+
+/* --- RESET Y ESTILOS GENERALES --- */
+
+/* Reset de márgenes, padding y box-sizing para un diseño más consistente */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Se establece la fuente predeterminada */
+body {
+  font-family: 'Arial', sans-serif; /* O cualquier otra fuente que prefieras */
+  background-color: #f4f4f4; /* Fondo gris claro para una vista más suave */
+  color: #333; /* Color de texto oscuro */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Enlaces */
+a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto, puede cambiarse más tarde */
+}
+
+/* --- ESTILOS DE LA LISTA DE ESTUDIANTES Y ANIMACIONES --- */
+
+/* Animaciones */
+.student-item {
+  opacity: 0;
+  transform: translateY(20px); /* Inicia ligeramente desplazado hacia abajo */
+  animation: fadeInUp 0.6s forwards; /* Animación de deslizamiento hacia arriba */
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Regresa a su posición original */
+  }
+}
+
+/* Estilo de los botones de acción */
+.student-actions button {
+  margin-right: 10px;
+  background-color: #5b8c2e; /* Verde suave */
+  color: white; /* Texto blanco */
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover */
+.student-actions button:hover {
+  background-color: #4a7d2a; /* Un verde ligeramente más oscuro */
+  transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Efecto cuando el botón está presionado */
+.student-actions button:active {
+  transform: translateY(1px); /* Cuando se hace clic, el botón "baja" */
+}
+
+/* --- ESTILOS DE MODAL --- */
+
+/* Estilo de la superposición del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Fondo más suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalOverlayFade 0.3s ease-out forwards;
+}
+
+@keyframes modalOverlayFade {
+  to {
+    background: rgba(0, 0, 0, 0.6); /* Fondo más oscuro cuando se abre el modal */
+  }
+}
+
+/* Estilo del contenido del modal */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px); /* Inicia ligeramente desfasada */
+  animation: modalFadeIn 0.3s ease-out forwards;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@keyframes modalFadeIn {
+  to {
+    transform: translateY(0); /* Desliza hacia su posición original */
+  }
+}
+
+/* --- ESTILOS DE ACCESIBILIDAD Y ENFOQUE --- */
+
+/* Efectos de enfoque (focus) para accesibilidad */
+input:focus, textarea:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5); /* Sombra azul al enfocarse */
+}
+
+/* Mejora de accesibilidad en los botones de acción */
+.student-actions button:focus {
+  border: 2px solid #5b8c2e; /* Resalta el botón con el mismo verde */
+  background-color: #4a7d2a;
+}
+
+/* --- TRANSICIONES Y EFECTOS ADICIONALES --- */
+
+/* Transiciones suaves en la lista de estudiantes cuando cambian de estado */
+.student-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.student-item.removed {
+  opacity: 0;
+  transform: scale(0.9); /* Efecto de reducción al eliminar */
+}
+
+/* --- ESTILOS GENERALES DE FORMULARIOS --- */
+
+/* Estilo de formularios de entrada */
+input, textarea, select {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Estilo de botones dentro de formularios */
+button {
+  padding: 10px 20px;
+  background-color: #5b8c2e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4a7d2a;
+}
+
+/* --- ESTILOS DE LA PÁGINA --- */
+
+/* Estilo del contenedor principal de la página */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo de encabezados */
+h1, h2, h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* --- ESTILOS DE MÁQUINA DE FONDO Y SECCIONES --- */
+
+/* Fondo de página */
+body {
+  background-color: #f4f4f4; /* Gris claro */
+}
+
+/* Fondo de secciones */
+section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section:last-child {
+  margin-bottom: 0; /* Sin margen inferior en la última sección */
+}
+
+
+
+
+

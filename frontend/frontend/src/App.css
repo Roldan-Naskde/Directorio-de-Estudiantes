@@ -1,0 +1,135 @@
+/* App.css */
+
+/* --- ESTILOS GENERALES --- */
+
+/* Asegura que el contenido dentro de #root esté centrado y tenga márgenes consistentes */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Fondo gris claro para toda la página */
+}
+
+/* --- LOGO --- */
+
+/* Estilo de la imagen del logo con transición suave */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms ease, transform 300ms ease; /* Transición suave para cambios de filtro y transformaciones */
+}
+
+/* Efecto hover: sombra luminosa cuando se pasa el ratón sobre el logo */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa); /* Sombra azul al hacer hover */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño del logo */
+}
+
+/* Efecto hover para el logo React */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa); /* Sombra verde para el logo React */
+  transform: scale(1.05); /* Aumenta el tamaño del logo React */
+}
+
+/* Animación para el logo (giro) */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación para el logo en enlaces, solo si la preferencia es no reducir la animación */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* --- TARJETA DE CONTENIDO --- */
+
+/* Estilo general de las tarjetas */
+.card {
+  padding: 2em;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al hacer hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra más intensa en hover */
+}
+
+/* --- ENLACES --- */
+
+/* Estilo de los enlaces para que no se vean subrayados por defecto */
+a {
+  text-decoration: none;
+  color: inherit; /* Hereda el color del texto */
+  transition: color 0.3s ease;
+}
+
+/* Estilo al hacer hover sobre los enlaces */
+a:hover {
+  color: #646cff; /* Cambio de color a un azul suave */
+}
+
+/* --- TEXTO DE LA PÁGINA --- */
+
+/* Estilo para el texto "Leer la documentación" */
+.read-the-docs {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Estilo cuando se pasa el ratón sobre el texto de la documentación */
+.read-the-docs:hover {
+  color: #646cff; /* Cambio a azul al hacer hover */
+}
+
+/* --- MEDIA QUERIES PARA DISPOSITIVOS MÁS PEQUEÑOS --- */
+
+/* En pantallas pequeñas, reducir el tamaño de los márgenes y el padding */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem; /* Reducir el padding en pantallas más pequeñas */
+  }
+
+  .logo {
+    height: 4em; /* Reducir el tamaño del logo en pantallas pequeñas */
+    padding: 1rem; /* Reducir el padding */
+  }
+
+  .card {
+    padding: 1.5em; /* Reducir el padding de las tarjetas */
+  }
+
+  .read-the-docs {
+    font-size: 0.8rem; /* Hacer el texto de la documentación más pequeño */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 3.5em; /* Ajustar el logo a pantallas aún más pequeñas */
+    padding: 0.5rem;
+  }
+
+  .card {
+    padding: 1em; /* Hacer las tarjetas más compactas */
+  }
+
+  .read-the-docs {
+    font-size: 0.75rem; /* Hacer más pequeño el texto */
+  }
+}
