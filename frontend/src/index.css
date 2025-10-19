@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(135deg, #00c851, #ff8800); /* Verde a naranja */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Contenedor principal */
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Título principal */
+h2 {
+  color: #fff; /* Verde fuerte */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Estilo general de inputs y selects */
+input.form-control,
+select.form-select {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+
+/* Botón principal (verde) */
+.btn-primary {
+  background-color: #00c851;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #007e33;
+}
+
+/* Botón de editar (naranja) */
+.btn-warning {
+  background-color: #ff8800;
+  border: none;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #ff6f00;
+}
+
+/* Botón de eliminar (rojo más vibrante para contraste) */
+.btn-danger {
+  background-color: #ff4444;
+  border: none;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #cc0000;
+}
+
+/* Bordes suaves para tarjetas */
+.card {
+  border-radius: 12px;
+}
+
+/* Mejorar tabla responsiva */
+.table-responsive {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
