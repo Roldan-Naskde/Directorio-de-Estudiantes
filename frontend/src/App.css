@@ -40,30 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-.card {
-  border: none;
-  border-radius: 0.5rem;
-}
-
-.table-hover tbody tr:hover {
-  background-color: #f8f9fa;
-}
-
-.btn-warning, .btn-danger {
-  min-width: 40px;
-}
-
-@media (max-width: 576px) {
-  /* ajuste para mobile: quizás convertir la tabla en tarjetas o scroll */
-}
-
-.rosado-claro-bg {
-  background-color: #ffe4ec; /* rosa claro */
-  /* Opcional: agregar sombra y margen para que se vea mejor */
-  box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
-  margin-bottom: 20px;
-}
-.title-text {
-  color: white;
-  font-weight: 700;
-}

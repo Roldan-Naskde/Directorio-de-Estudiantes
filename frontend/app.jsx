@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import StudentForm from './components/StudentForm';
-import StudentList from './components/StudentList';
-import './App.css'
+import { useState } from "react";
+import StudentForm from "./components/StudentForm";
+import StudentList from "./components/StudentList";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
   const [refresh, setRefresh] = useState(false);

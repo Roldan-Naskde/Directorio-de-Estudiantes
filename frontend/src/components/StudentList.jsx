@@ -1,51 +1,54 @@
-import "./StudentList.css";
+import { useEffect, useState } from "react";
+import { getStudents, deleteStudent } from "../api";
 
-export default function StudentList({ students, onEdit, onDelete }) {
+export default function StudentList({ refresh }) {
+  const [students, setStudents] = useState([]);
+
+  const loadStudents = async () => {
+    const data = await getStudents();
+    setStudents(data);
+  };
+
+  useEffect(() => {
+    loadStudents();
+  }, [refresh]);
+
   return (
-    <div className="table-responsive">
-      <table className="table table-striped table-hover align-middle">
+    <div className="card shadow-sm p-3">
+      <h5 className="mb-3">Lista de Estudiantes</h5>
+      <table className="table table-striped">
         <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Correo</th>
-                <th>Activo</th>
-                <th>Dirección</th>
-                <th>Celular</th>
-                <th>Semestre</th>
-                <th>Carrera</th>
+          <tr>
+            <th>#</th>
+            <th>Nombre completo</th>
+            <th>Email</th>
+            <th>Fecha de inscripción</th>
+            <th>Activo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {students.map((s, i) => (
+            <tr key={s.id}>
+              <td>{i + 1}</td>
+              <td>{s.firstName} {s.lastName}</td>
+              <td>{s.email}</td>
+              <td>{s.enrollmentDate?.slice(0, 10)}</td>
+              <td>{s.active ? "✅" : "❌"}</td>
+              <td>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => {
+                    deleteStudent(s.id);
+                    loadStudents();
+                  }}
+                >
+                  Eliminar
+                </button>
+              </td>
             </tr>
-            </thead>
-            <tbody>
-            {students.map((s) => (
-                <tr key={s._id}>
-                <td>{s.firstName}</td>
-                <td>{s.lastName}</td>
-                <td>{s.email}</td>
-                <td>{s.active ? "✅" : "❌"}</td>
-                <td>{s.address}</td>
-                <td>{s.phone}</td>
-                <td>{s.semester}</td>
-                <td>{s.career}</td>
-                <td className="text-center">
-                    <button
-                    className="btn btn-sm btn-warning me-2"
-                    onClick={() => onEdit(s)}
-                    title="Editar"
-                    >
-                    ✏
-                    </button>
-                    <button
-                    className="btn btn-sm btn-danger"
-                    onClick={() => onDelete(s._id)}
-                    title="Eliminar"
-                    >
-                    🗑
-                    </button>
-                </td>
-                </tr>
-            ))}
-            </tbody>
+          ))}
+        </tbody>
       </table>
     </div>
   );
